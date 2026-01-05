@@ -1,0 +1,16 @@
+[phases.setup]
+cmds = ["pip install -r requirements.txt"]
+
+[start]
+cmd = "python main.py"
+
+[phases.install]
+cmds = ["pip install --upgrade pip"]
+
+[build]
+cacheDirectories = ["/root/.cache/pip"]
+
+[deploy]
+startCommand = "python main.py"
+healthcheckPath = "/"
+healthcheckTimeout = 30
